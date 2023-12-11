@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int num;
+    int guess;
+    int tries = 1;
+    srand(time(NULL));
+    num = (rand() % 5) + 1;
+    bool game_on = true;
+
+    while (game_on) {
+        cout << "Guess a number between 1-5: ";
+        cin >> guess;
+
+        if (guess == num && tries == 1) {
+            cout << "You guessed first time thats difficult! It took you " << tries << " try only";
+            game_on = false;
+        }
+
+        else if (guess == num && tries != 1) {
+            cout << "You guessed correctly! It took you " << tries << " tries";
+            game_on = false;
+
+        } 
+        else {
+            cout << "Incorrect guess, try again \n";
+            tries += 1;
+        }
+    }
+
+    return 0;
+}
+ 
